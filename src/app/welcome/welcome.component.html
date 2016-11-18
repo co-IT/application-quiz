@@ -1,0 +1,7 @@
+<form [formGroup]="attendeeForm">
+  <input formControlName="firstname" type=text placeholder="Vorname">
+  <input formControlName="lastname" type=text placeholder="Nachname">
+  <input formControlName="email" type=text placeholder="Email">
+  <button (click)="start()" [disabled]="!attendeeForm.valid">Quiz starten</button>
+</form>
+
