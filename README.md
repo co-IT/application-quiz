@@ -1,5 +1,40 @@
 # ApplicationQuiz
 
+Objects: 
+Question
+
+  question_text  
+  Time:number
+  TakenTime:number
+  
+
+SingleChoice implements Question
+  PossibleAnswers:array<Sring>
+  GivenAnswer:String
+
+MultipleChoice implements Question
+  PossibleAnswers:<String>
+  GivenAnswers:array<String>
+
+FreeText implements Question
+  GivenAnswer:string
+
+
+Attendee
+firstname
+lastname
+email
+
+
+SampleRoute
+/quiz/welcome/      //Get User Info
+/quiz/question/:id
+
+SingeltonServices:
+attendee.service
+questions.service
+
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.
 
 ## Development server
