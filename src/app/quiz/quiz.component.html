@@ -1,0 +1,28 @@
+<aq-quizprogress [currentQuestionNumber]="currentQuestionNumber" [quizlength]="questionService.questions.length"></aq-quizprogress>
+<p>Bitte lösen Sie folgende Aufgabe:</p>
+<div id="questionText">{{currentQuestion?.questionText}}</div>
+<div [ngSwitch]="currentQuestion?.constructor.name">
+  <div *ngSwitchCase="'FreeTextQuestion'">
+    <div class="questionhint">Tragen Sie ihre Antwort hier ein:</div>
+    <md-textarea [rows]="10" [disabled]="currentQuestion?.takenTime>=0" [(ngModel)]="answer"></md-textarea>
+  </div>
+  <div *ngSwitchCase="'SingleChoiceQuestion'">
+    <div class="questionhint">Nur eine Antwort ist möglich.</div>
+      <md-radio-group [(value)]="answer">
+        <md-radio-button *ngFor="let possibleAnswer of currentQuestion?.possibleAnswers" [disabled]="currentQuestion?.takenTime>=0" [value]="possibleAnswer">{{possibleAnswer}}</md-radio-button>
+      </md-radio-group>
+  </div>
+  <div *ngSwitchCase="'MultipleChoiceQuestion'">
+   <div class="questionhint">Mehfachauswahl möglich.</div>
+    <div class="possibleAnswerCheckbox" *ngFor="let possibleAnswer of currentQuestion?.possibleAnswers">
+    <md-checkbox [disabled]="currentQuestion?.takenTime>=0" (change)="updateMultipleChoiceAnswer(possibleAnswer)">{{possibleAnswer}}</md-checkbox>
+    </div>
+  </div>
+
+
+</div>
+<div class="quizfooter">
+<aq-timer></aq-timer>
+<!--{{freeTextAnswer}}-->
+<button md-raised-button (click)=nextQuestion()>Weiter</button>
+</div>

@@ -1,7 +1,21 @@
+<div class="attendeeFormWrapper">
+<h3>Bewerberquiz</h3>
 <form [formGroup]="attendeeForm">
-  <input formControlName="firstname" type=text placeholder="Vorname">
-  <input formControlName="lastname" type=text placeholder="Nachname">
-  <input formControlName="email" type=text placeholder="Email">
-  <button (click)="start()" [disabled]="!attendeeForm.valid">Quiz starten</button>
+
+  <!-- css::before for invalid forms--> 
+  <md-input formControlName="firstname" type=text placeholder="Vorname"><md-hint><control-messages [control]="attendeeForm.controls.firstname"></control-messages></md-hint></md-input>
+  <md-input formControlName="lastname" type=text placeholder="Nachname"><md-hint><control-messages [control]="attendeeForm.controls.lastname"></control-messages ></md-hint></md-input>
+  <md-input formControlName="email" type=text placeholder="Email"><md-hint><control-messages [control]="attendeeForm.controls.email"></control-messages></md-hint></md-input>
+  <button md-raised-button (click)="startQuiz()" [disabled]="!attendeeForm.valid">Quiz starten</button>
 </form>
+<div class="quizhint">
+<b>Infos zum Quiz:</b>
+<ul>
+<li>Bei jeder Frage wird die verbleibende Zeit angezeigt. Diese dient als Richtwert, auch nach Ablauf der Zeir kann die Antwort gespeichert werden.</li>
+<li>Jede Frage kann nur einmal beantwortet werden.</li>
+<li>Ein Aktualisieren der Seite führt zum Abbruch des Quiz</li>
+<li>Um das Quiz zu beginnen, tragen Sie bitte Ihren Vornamen, Nachnamen und eine gültige Email-Adresse ein.</li>
+</ul>
+</div>
+</div>
 

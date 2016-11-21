@@ -1,0 +1,4 @@
+<div class="quizprogressbar">
+Frage {{(currentQuestionNumber-0)+1}} von {{quizlength}}<br />
+<md-progress-bar mode="determinate" [value]="(currentQuestionNumber / quizlength ) * 100" color="accent"> </md-progress-bar>
+</div>
