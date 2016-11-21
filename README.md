@@ -2,7 +2,6 @@
 
 Objects: 
 Question
-
   question_text  
   Time:number
   TakenTime:number
@@ -21,25 +20,30 @@ FreeText implements Question
 
 
 Attendee
-firstname
-lastname
-email
+  firstname
+  lastname
+  email
 
 
-
-SampleRoutes
+Sample Routes:
 /quiz/welcome/      //Get User Info
-/quiz/question/:id
+/quiz/question/:id  //guarded
+/tranmission        //guarded
+/thanksgiving       //guarded
 
-SingeltonServices:
-attendee.service
-questions.service
-progressbar.service
+Singelton Services:
+  attendee.service
+  questions.service
+  progressbar.service
+  timer.service
+  inputvalidation.service
+  routeguard.service
+  transmission.service
 
 
-Functions Server Side Application
+possible functions Server-Side-Application
   Create Session for Attendee
-  Compare TakenTime with time between request questions an submitting answers on ServerSide to prevent manipulation  
+  Compare sum of TakenTimes with time between request questions an submitting answers on ServerSide to prevent manipulation  
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.
 
