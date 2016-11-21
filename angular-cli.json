@@ -18,7 +18,8 @@
       "prefix": "aq",
       "mobile": false,
       "styles": [
-        "styles.scss"
+        "styles.scss",
+        "../node_modules/@angular/material/core/theming/prebuilt/deeppurple-amber.scss"
       ],
       "scripts": [],
       "environments": {

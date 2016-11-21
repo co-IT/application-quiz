@@ -26,14 +26,20 @@ lastname
 email
 
 
-SampleRoute
+
+SampleRoutes
 /quiz/welcome/      //Get User Info
 /quiz/question/:id
 
 SingeltonServices:
 attendee.service
 questions.service
+progressbar.service
 
+
+Functions Server Side Application
+  Create Session for Attendee
+  Compare TakenTime with time between request questions an submitting answers on ServerSide to prevent manipulation  
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.
 

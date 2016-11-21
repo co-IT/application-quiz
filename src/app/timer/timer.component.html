@@ -1,0 +1,6 @@
+<div class="progresscircle">
+  <div id="timeToSolve">
+    <div>{{timerService.timeToSolve - timerService.takenTime >= 0 ? timerService.timeToSolve - timerService.takenTime : 0}}</div>
+ </div>
+ <md-progress-circle mode="determinate" [value]="(1-(timerService.takenTime / timerService.timeToSolve)) * 100  >= 0 ? (1-(timerService.takenTime / timerService.timeToSolve)) * 100 : 0"></md-progress-circle>
+</div>
