@@ -13,7 +13,7 @@
       </md-radio-group>
   </div>
   <div *ngSwitchCase="'MultipleChoiceQuestion'">
-   <div class="questionhint">Mehfachauswahl möglich.</div>
+   <div class="questionhint">Mehrfachauswahl möglich.</div>
     <div class="possibleAnswerCheckbox" *ngFor="let possibleAnswer of currentQuestion?.possibleAnswers">
     <md-checkbox [disabled]="currentQuestion?.takenTime>=0" (change)="updateMultipleChoiceAnswer(possibleAnswer)">{{possibleAnswer}}</md-checkbox>
     </div>
