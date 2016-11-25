@@ -1,24 +1,38 @@
+@import "../../variables.scss";
+
+h2{
+    font-size:1.17rem;
+}
+
 md-input{
     margin-top:17px;
     max-width:350px;
-    display:flex;
-    
+    display:flex;  
 }
 
 .attendeeFormWrapper{
     max-width: 360px;
-    margin: 0 auto;    
+    margin: 0 auto;
+    @media screen and (min-width: $screen-large) {
+        float: left;
+        width:360px; 
+    }    
 }
 
 button{
    float:right;
-
 }
 control-messages{
     color:red;
 }
 .quizhint{
-    margin-top:55px;
+    margin:55px auto;
     clear:both;
-    font-size: 11px;
+    font-size: 0.75rem;
+    max-width: 360px;
+    @media screen and (min-width: $screen-large) {
+        margin: 40px 0px auto 10px;
+        clear: none;
+        float: left;
+    }
 }

@@ -26,7 +26,6 @@ export class WelcomeComponent implements OnInit {
   ngOnInit() {
     this.questionsService.questionsFetched.subscribe(isfetched=>{
       if(isfetched){
-        console.log(isfetched);
         this.router.navigate(['quiz',0])
       }
     })

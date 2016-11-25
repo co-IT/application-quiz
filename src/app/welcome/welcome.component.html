@@ -8,14 +8,15 @@
   <md-input formControlName="email" type=text placeholder="Email"><md-hint><control-messages [control]="attendeeForm.controls.email"></control-messages></md-hint></md-input>
   <button md-raised-button (click)="startQuiz()" [disabled]="!attendeeForm.valid">Quiz starten</button>
 </form>
+</div>
 <div class="quizhint">
 <b>Infos zum Quiz:</b>
 <ul>
-<li>Bei jeder Frage wird die verbleibende Zeit angezeigt. Diese dient als Richtwert, auch nach Ablauf der Zeir kann die Antwort gespeichert werden.</li>
+<li>Bei jeder Frage wird die verbleibende Zeit angezeigt. Diese dient als Richtwert, auch nach Ablauf der Zeit kann die Antwort gespeichert werden.</li>
 <li>Jede Frage kann nur einmal beantwortet werden.</li>
 <li>Ein Aktualisieren der Seite führt zum Abbruch des Quiz</li>
 <li>Um das Quiz zu beginnen, tragen Sie bitte Ihren Vornamen, Nachnamen und eine gültige Email-Adresse ein.</li>
 </ul>
 </div>
-</div>
+
 
