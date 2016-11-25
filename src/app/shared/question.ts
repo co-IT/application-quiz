@@ -2,16 +2,11 @@ export class Question {
     questionText:String;
     time:number;
     takenTime:number;
-    
-    
 
     constructor(questionText:String,time:number){
         this.questionText=questionText;
         this.time=time;
-     }
-    
-    
-    
+    }
 }
 
 export class SingleChoiceQuestion extends Question{
