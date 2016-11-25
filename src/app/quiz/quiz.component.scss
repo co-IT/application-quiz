@@ -1,3 +1,5 @@
+
+
 md-radio-button{
     display:flex;
     margin-bottom:5px;
@@ -10,11 +12,16 @@ md-radio-button{
 md-textarea{
     width:100%;
     border: solid lightgrey 1px !important;
+
+}
+
+.md-input-element{
+    resize:vertical;
 }
 
 button{
     margin-top: 15px;
-   float:right;
+    float:right;
 
 }
 .quizfooter{
@@ -31,5 +38,5 @@ p{
     margin-bottom: 10px;
 }
 .questionhint{
-    font-size: 13px;
+    font-size: 0.9rem;
 }

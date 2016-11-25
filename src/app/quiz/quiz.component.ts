@@ -64,7 +64,7 @@ export class QuizComponent {
   nextQuestion(){
     //SetAnswer
     if(typeof this.currentQuestion.takenTime === 'undefined'){
-      console.log("setAswer");
+      //console.log("setAswer");
       
       this.currentQuestion.setAnswer(this.answer,this.timerService.takenTime);
     }
