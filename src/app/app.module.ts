@@ -20,6 +20,7 @@ import { TimerComponent } from './timer/timer.component';
 import { TransmissionComponent } from './transmission/transmission.component';
 import { ControlinputsComponent } from './controlinputs/controlinputs.component';
 import { QuizprogressComponent } from './quizprogress/quizprogress.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -41,8 +42,17 @@ import { QuizprogressComponent } from './quizprogress/quizprogress.component';
     RouterModule.forRoot(appRoutes),
     MaterialModule.forRoot()
   ],
-  providers: [AttendeeService, QuestionsService,TimerService,TransmissionService,InputvalidationService,RouteguardService],
-  
+  providers: [
+    AttendeeService,
+    QuestionsService,
+    TimerService,
+    TransmissionService,
+    InputvalidationService,
+    RouteguardService,
+     Location,
+              {provide: LocationStrategy, useClass: HashLocationStrategy}
+    ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
