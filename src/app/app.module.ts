@@ -20,7 +20,7 @@ import { TimerComponent } from './timer/timer.component';
 import { TransmissionComponent } from './transmission/transmission.component';
 import { ControlinputsComponent } from './controlinputs/controlinputs.component';
 import { QuizprogressComponent } from './quizprogress/quizprogress.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy, Location } from '@angular/common';
 
 
 @NgModule({
