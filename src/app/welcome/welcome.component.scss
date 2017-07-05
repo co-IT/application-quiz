@@ -2,12 +2,11 @@ md-input{
     margin-top:17px;
     max-width:350px;
     display:flex;
-    
 }
 
 .attendeeFormWrapper{
     max-width: 360px;
-    margin: 0 auto;    
+    margin: 0 auto;
 }
 
 button{
@@ -20,5 +19,13 @@ control-messages{
 .quizhint{
     margin-top:55px;
     clear:both;
-    font-size: 11px;
+    font-size: 13px;
+}
+
+.questionsError{
+  margin-top: 40px;
+  color: red;
+  font-size: 14px;
+  padding: 10px;
+  border: solid red;
 }
