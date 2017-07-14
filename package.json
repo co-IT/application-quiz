@@ -1,11 +1,13 @@
 {
-  "name": "application-quiz",
+  "name": "attendee-quiz",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build ",
+    "build:dev": "ng build --env=\"dev:remote\" --target=production",
+    "build:prod": "ng build --env=prod --target=production --deploy-url=\"application-quiz/\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
