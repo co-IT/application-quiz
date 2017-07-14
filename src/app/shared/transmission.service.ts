@@ -4,7 +4,7 @@ import { AttendeeService } from './attendee.service';
 import { QuestionsService } from './questions.service';
 
 import { Injectable, EventEmitter } from '@angular/core';
-import { environment } from "../../environments/environment";
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class TransmissionService {
@@ -15,7 +15,7 @@ export class TransmissionService {
   transmitAnswers() {
     const quizResult: QuizResult = new QuizResult(this.attendeeService.attendee, this.questionsService.questions);
     // console.log(JSON.stringify(quizResult));
-    return this.http.post(`${environment.hostPath}`, JSON.stringify(quizResult))
+    return this.http.post(`${environment.hostPath}/sendmail.php`, JSON.stringify(quizResult))
   }
 
 }
