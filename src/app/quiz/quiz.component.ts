@@ -22,7 +22,7 @@ export class QuizComponent {
 
   constructor(
     private ar: ActivatedRoute,
-    private questionService: QuestionsService,
+    public questionService: QuestionsService,
     private router: Router,
     private timerService: TimerService) {
     /**Fetch routernavigation on changed parameters */

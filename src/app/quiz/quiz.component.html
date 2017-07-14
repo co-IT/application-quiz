@@ -1,7 +1,7 @@
 <aq-quizprogress [currentQuestionNumber]="currentQuestionNumber" [quizlength]="questionService.questions.length"></aq-quizprogress>
 <p>Bitte lösen Sie folgende Aufgabe:</p>
 <div id="questionText">{{currentQuestion?.questionText}}</div>
-<div [ngSwitch]="currentQuestion?.constructor.name">
+<div [ngSwitch]="currentQuestion?.type">
   <div *ngSwitchCase="'FreeTextQuestion'">
     <div class="questionhint">Tragen Sie ihre Antwort hier ein:</div>
     <md-textarea [rows]="10" [disabled]="currentQuestion?.takenTime>=0" [(ngModel)]="answer"></md-textarea>
@@ -18,11 +18,8 @@
     <md-checkbox [disabled]="currentQuestion?.takenTime>=0" (change)="updateMultipleChoiceAnswer(possibleAnswer)">{{possibleAnswer}}</md-checkbox>
     </div>
   </div>
-
-
 </div>
 <div class="quizfooter">
 <aq-timer></aq-timer>
-<!--{{freeTextAnswer}}-->
 <button md-raised-button (click)=nextQuestion()>Weiter</button>
 </div>
