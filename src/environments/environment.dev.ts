@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  hostPath: 'http://localhost'
+  hostPath: 'http://dev.heco.de/application-quiz'
 };

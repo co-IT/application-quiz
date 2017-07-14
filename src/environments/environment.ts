@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  hostPath: 'http://localhost'
+  hostPath: 'http://localhost:8080/auth1'
 };
