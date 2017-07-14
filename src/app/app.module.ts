@@ -21,6 +21,7 @@ import { TransmissionComponent } from './transmission/transmission.component';
 import { ControlinputsComponent } from './controlinputs/controlinputs.component';
 import { QuizprogressComponent } from './quizprogress/quizprogress.component';
 import { HashLocationStrategy, LocationStrategy, Location } from '@angular/common';
+import { AttendeetypeSelectorComponent } from './attendeetype-selector/attendeetype-selector.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { HashLocationStrategy, LocationStrategy, Location } from '@angular/commo
     TimerComponent,
     TransmissionComponent,
     ControlinputsComponent,
-    QuizprogressComponent
+    QuizprogressComponent,
+    AttendeetypeSelectorComponent
   ],
   imports: [
     BrowserModule,
