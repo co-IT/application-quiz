@@ -2,13 +2,12 @@ import { Question, MultipleChoiceQuestion, SingleChoiceQuestion, FreeTextQuestio
 import { Injectable, EventEmitter } from '@angular/core';
 import{ Http, Response } from '@angular/http';
 import { environment } from '../../environments/environment';
-import { questions } from '../questions';
 import { Observable } from 'rxjs/Observable';
 
 
 @Injectable()
 export class QuestionsService {
-  questions: Question[][];
+  questions: Question[];
   questionsFetched = new EventEmitter();
   questionsError: string;
 
@@ -18,7 +17,8 @@ export class QuestionsService {
 
    fetchQuestions() {
      /**For Debug Purposes use local stored questions */
-     return Observable.of(questions);
+     return this.http.get('./assets/questions.json')
+     .map(response => response.json());
 
    }
 
