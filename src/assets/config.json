@@ -1,0 +1,7 @@
+{
+  "mailSender": "bewerbung@co-IT.rocks",
+  "mailReciever": "fs@co-IT.eu",
+  "subject": "Neue Quiz-Antworten",
+  "mailHandler": "http://localhost:8080/mail/getVars.php",
+  "questions": "./assets/questions.json"
+}

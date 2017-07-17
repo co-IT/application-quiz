@@ -22,6 +22,7 @@ import { ControlinputsComponent } from './controlinputs/controlinputs.component'
 import { QuizprogressComponent } from './quizprogress/quizprogress.component';
 import { HashLocationStrategy, LocationStrategy, Location } from '@angular/common';
 import { AttendeetypeSelectorComponent } from './attendeetype-selector/attendeetype-selector.component';
+import { QuizConfigService } from './shared/quizConfig.service';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { AttendeetypeSelectorComponent } from './attendeetype-selector/attendeet
   providers: [
     AttendeeService,
     QuestionsService,
+    QuizConfigService,
     TimerService,
     TransmissionService,
     InputvalidationService,
