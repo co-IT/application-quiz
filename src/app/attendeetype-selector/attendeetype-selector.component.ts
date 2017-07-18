@@ -34,6 +34,7 @@ export class AttendeetypeSelectorComponent implements OnInit {
 
   startQuiz(attendeeType) {
     this.questionsError = '';
+    this.attendeeService.attendee.type = attendeeType;
     this.questionsService.fetchQuestions(attendeeType)
     .subscribe(
         response => {
