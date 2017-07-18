@@ -20,7 +20,7 @@ import { TimerComponent } from './timer/timer.component';
 import { TransmissionComponent } from './transmission/transmission.component';
 import { ControlinputsComponent } from './controlinputs/controlinputs.component';
 import { QuizprogressComponent } from './quizprogress/quizprogress.component';
-import { HashLocationStrategy, LocationStrategy, Location } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy, Location, CommonModule } from '@angular/common';
 import { AttendeetypeSelectorComponent } from './attendeetype-selector/attendeetype-selector.component';
 import { QuizConfigService } from './shared/quizConfig.service';
 
@@ -38,6 +38,7 @@ import { QuizConfigService } from './shared/quizConfig.service';
     AttendeetypeSelectorComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
