@@ -83,7 +83,7 @@ export class TransmissionService {
         answers += `<li>${answer}</li>`
       })
     } else {
-      answers = question.givenAnswer;
+      answers += question.givenAnswer;
     }
     answers += `</ul><p></p>`
     return answers;
