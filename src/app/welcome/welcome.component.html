@@ -6,7 +6,7 @@
   <md-input formControlName="firstname" type=text placeholder="Vorname"><md-hint><control-messages [control]="attendeeForm.controls.firstname"></control-messages></md-hint></md-input>
   <md-input formControlName="lastname" type=text placeholder="Nachname"><md-hint><control-messages [control]="attendeeForm.controls.lastname"></control-messages ></md-hint></md-input>
   <md-input formControlName="email" type=text placeholder="Email"><md-hint><control-messages [control]="attendeeForm.controls.email"></control-messages></md-hint></md-input>
-  <button md-raised-button (click)="startQuiz()" [disabled]="!attendeeForm.valid">Quiz starten</button>
+  <button md-raised-button (click)="setAttendee()" [disabled]="!attendeeForm.valid">Quiz starten</button>
 </form>
 <div class="questionsError" *ngIf="questionsError">
   {{questionsError}}

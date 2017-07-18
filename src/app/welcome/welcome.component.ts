@@ -6,7 +6,8 @@ import { Attendee } from './../shared/attendee';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MdSnackBar } from "@angular/material";
+import { MdSnackBar } from '@angular/material';
+import { QuizConfigService } from '../shared/quizConfig.service';
 
 @Component({
   templateUrl: './welcome.component.html',
@@ -22,58 +23,27 @@ export class WelcomeComponent implements OnInit {
       private attendeeService: AttendeeService,
       private questionsService: QuestionsService,
       private router: Router,
-      private snackBar: MdSnackBar) {
+      private snackBar: MdSnackBar,
+      private quizConfigService: QuizConfigService) {
     this.attendeeForm = this.builder.group({
       firstname: ['', Validators.compose([Validators.required, Validators.minLength(2)])],
       lastname: ['', Validators.compose([Validators.required, Validators.minLength(2)])],
-      email: ['', Validators.compose([Validators.required, Validators.email])]
+      email: ['', Validators.compose([Validators.required, InputvalidationService.emailValidator])]
     });
     this.questionsError = questionsService.questionsError;
    }
 
 
   ngOnInit() {
-    this.questionsService.questionsFetched.subscribe(isfetched => {
-      if (isfetched) {
-        console.log(isfetched);
-        this.router.navigate(['quiz', 0])
-      }
-    })
+    this.quizConfigService.getConfig().subscribe(config => this.quizConfigService.config = config);
+    this.attendeeService.getAttendeeTypes().subscribe(res => this.attendeeService.attendeeTypes = res);
   }
 
-  startQuiz() {
-    this.questionsError = '';
-    this.attendeeService.setAttendee(
+  setAttendee() {
+     this.attendeeService.setAttendee(
         new Attendee(this.attendeeForm.value.firstname, this.attendeeForm.value.lastname, this.attendeeForm.value.email)
         );
-    this.questionsService.fetchQuestions()
-    .subscribe(
-        response => {
-          response.Fragen.forEach(question => {
-            switch (question.Typ) {
-              case 'MehrfachAuswahl':
-                this.questionsService.questions.push(new MultipleChoiceQuestion(question.Text, question.ZeitFuerFrage, question.Antworten))
-                break;
-              case 'EinfachAuswahl':
-                this.questionsService.questions.push(new SingleChoiceQuestion(question.Text, question.ZeitFuerFrage, question.Antworten))
-                break;
-              case 'FreieAntwort':
-                this.questionsService.questions.push(new FreeTextQuestion(question.Text, question.ZeitFuerFrage))
-                break;
-
-              default:
-                break;
-            }
-          });
-        },
-        error => {
-          this.questionsError = 'Fehler beim Laden der Fragen';
-          return;
-        },
-        () => {
-          this.questionsService.questionsFetched.emit(true);
-        }
-      )
+      this.router.navigate(['/attendeeSelector'])
   }
 
 }
