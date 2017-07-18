@@ -15,11 +15,14 @@ export class QuestionsService {
     this.questions = new Array();
    }
 
-   fetchQuestions() {
+   fetchQuestions(attendeeType) {
      /**For Debug Purposes use local stored questions */
      return this.http.get('./assets/questions.json')
-     .map(response => response.json());
-
+     .map(response => response.json())
+     .map(parsedResponse => parsedResponse.Fragen)
+     .map(question => {
+      return question.filter(qn => qn.zugehoehrigeBewerberTypen.includes(attendeeType))
+    })
    }
 
 }
