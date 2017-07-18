@@ -1,7 +1,7 @@
 {
   "mailSender": "bewerbung@co-IT.rocks",
-  "mailReceiver": "**@co-IT.eu",
+  "mailReceiver": "fs@co-IT.eu",
   "subject": "Neue Quiz-Antworten",
-  "mailHandler": "http://localhost:8080/mail/sendmail.php",
+  "mailHandler": "http://dev.heco.de/attendee-quiz/mailer.php",
   "questions": "./assets/questions.json"
 }

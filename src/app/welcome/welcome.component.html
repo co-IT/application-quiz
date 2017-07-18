@@ -12,7 +12,7 @@
   <md-input-container>
     <input mdInput formControlName="email" type=text placeholder="Email"><md-hint><control-messages [control]="attendeeForm.controls.email"></control-messages></md-hint>
   </md-input-container>
-    <button md-raised-button (click)="setAttendee()" [disabled]="!attendeeForm.valid">Quiz starten</button>
+    <button md-raised-button type="button" (click)="setAttendee()" [disabled]="!attendeeForm.valid">Quiz starten</button>
 </form>
 <div class="questionsError" *ngIf="questionsError">
   {{questionsError}}

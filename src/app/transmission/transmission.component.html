@@ -4,7 +4,7 @@
 <p>
   Sie können die gegebenen Antworten nun übermitteln.
 </p>
-<button md-raised-button (click)="transmit()">Antworten übermitteln</button>
+<button md-raised-button type="button" (click)="transmit()">Antworten übermitteln</button>
 <div class="transmissionError" *ngIf="transmissionError">
   {{transmissionError}}
 </div>
