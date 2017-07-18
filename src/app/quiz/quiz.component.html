@@ -4,7 +4,9 @@
 <div [ngSwitch]="currentQuestion?.type">
   <div *ngSwitchCase="'FreeTextQuestion'">
     <div class="questionhint">Tragen Sie ihre Antwort hier ein:</div>
-    <md-textarea [rows]="10" [disabled]="currentQuestion?.takenTime>=0" [(ngModel)]="answer"></md-textarea>
+    <md-input-container>
+      <textarea mdInput [rows]="10" [disabled]="currentQuestion?.takenTime>=0" [(ngModel)]="answer"></textarea>
+    </md-input-container>
   </div>
   <div *ngSwitchCase="'SingleChoiceQuestion'">
     <div class="questionhint">Nur eine Antwort ist möglich.</div>

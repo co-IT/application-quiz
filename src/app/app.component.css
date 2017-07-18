@@ -3,10 +3,10 @@
 md-card{
     margin:0 auto;
 
-    max-width:510px;
+    max-width:550px;
     height:100%;
     max-height:800px;
-    min-height:300px;
+    min-height:400px;
     overflow: auto;
 }
 

@@ -65,7 +65,7 @@ export class TransmissionService {
   getPossibleAnswers(question): string {
    let possibleAnswers = '';
    if (question.type === 'SingleChoiceQuestion' || question.type === 'MultipleChoiceQuestion' ) {
-    possibleAnswers = `<p style="font-weight:bold;">Mögliche Antoworten</p><ul>`
+    possibleAnswers = `<p style="font-weight:bold;">Mögliche Antworten</p><ul>`
     question.possibleAnswers.map(possibleAnswer => {
       possibleAnswers += `<li>${possibleAnswer}</li>`
     })

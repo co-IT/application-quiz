@@ -1,5 +1,5 @@
 import {FreeTextQuestion, SingleChoiceQuestion,  MultipleChoiceQuestion} from '../shared/question';
-import {MdSnackBar} from '@angular/material/snack-bar';
+import {MdSnackBar} from '@angular/material';
 import {Router} from '@angular/router';
 import {QuestionsService} from '../shared/questions.service';
 import {AttendeeService} from '../shared/attendee.service';

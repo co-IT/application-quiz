@@ -1,3 +1,12 @@
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MdInputModule,
+  MdProgressSpinnerModule,
+  MdProgressBarModule,
+  MdRadioModule,
+  MdSnackBarModule,
+  MdCheckboxModule,
+  MdButtonModule,
+  MdCardModule} from '@angular/material';
 import { RouteguardService } from './shared/routeguard.service';
 import { InputvalidationService } from './shared/inputvalidation.service';
 import { TransmissionService } from './shared/transmission.service';
@@ -10,7 +19,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -39,12 +47,20 @@ import { QuizConfigService } from './shared/quizConfig.service';
   ],
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    MaterialModule.forRoot()
+    MdCardModule,
+    MdInputModule,
+    MdButtonModule,
+    MdCheckboxModule,
+    MdSnackBarModule,
+    MdRadioModule,
+    MdProgressSpinnerModule,
+    MdProgressBarModule
   ],
   providers: [
     AttendeeService,
