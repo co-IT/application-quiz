@@ -24,7 +24,8 @@
 npm-debug.log
 testem.log
 /typings
-/src/app/assets/*
+/src/assets/config.json
+/src/assets/questions.json
 
 # e2e
 /e2e/*.js
