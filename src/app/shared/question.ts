@@ -14,7 +14,7 @@ export class Question {
 
 }
 
-export class SingleChoiceQuestion extends Question{
+export class SingleChoiceQuestion extends Question {
     type = 'SingleChoiceQuestion';
     possibleAnswers: string | string[];
     givenAnswer: string;

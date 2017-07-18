@@ -8,7 +8,7 @@
   </div>
   <div *ngSwitchCase="'SingleChoiceQuestion'">
     <div class="questionhint">Nur eine Antwort ist möglich.</div>
-      <md-radio-group [(value)]="answer">
+      <md-radio-group [(ngModel)]="answer">
         <md-radio-button *ngFor="let possibleAnswer of currentQuestion?.possibleAnswers" [disabled]="currentQuestion?.takenTime>=0" [value]="possibleAnswer">{{possibleAnswer}}</md-radio-button>
       </md-radio-group>
   </div>
