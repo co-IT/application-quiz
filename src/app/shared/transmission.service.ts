@@ -1,5 +1,5 @@
 import {FreeTextQuestion, MultipleChoiceQuestion,  SingleChoiceQuestion,   Question} from './question';
-import {RequestOptions, RequestOptionsArgs,  Http, Headers} from '@angular/http';
+import {RequestOptions, RequestOptionsArgs,  Http, Headers, URLSearchParams} from '@angular/http';
 import { QuizResult } from './quizresult';
 import { AttendeeService } from './attendee.service';
 import { QuestionsService } from './questions.service';
